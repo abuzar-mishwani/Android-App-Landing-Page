@@ -11,7 +11,6 @@ import {
   Star, 
   CheckCircle,
   ArrowRight,
-  Play,
   Zap,
   Sliders,
   Shield,
@@ -25,7 +24,8 @@ import {
   Award,
   Users,
   Menu,
-  X
+  X,
+  Github
 } from 'lucide-react';
 
 // Import images
@@ -461,14 +461,17 @@ function App() {
                   <ArrowRight size={16} />
                 </motion.a>
                 
-                <motion.button
+                <motion.a
+                  href="https://github.com/abuzar-mishwani/Android-App-Landing-Page"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   className="btn-secondary flex items-center justify-center gap-2 text-base"
                 >
-                  <Play size={20} />
-                  Watch Demo
-                </motion.button>
+                  <Github size={20} />
+                  View Source Code
+                </motion.a>
               </motion.div>
               
               {/* Enhanced Stats */}

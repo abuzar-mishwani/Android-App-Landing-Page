@@ -1,7 +1,11 @@
 # 🎓 GPA Calculator & Planner - Modern Landing Page
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://mishwani.tech)
-[![React](https://img.shields.io/badge/React-18-blue)](https://reactjs.org/)
+[![React](https://img.shields.io/badge**Abu Zar Mishwani**
+
+- Website: [mishwani.tech](https://mishwani.tech)
+- GitHub: [@abuzar-mishwani](https://github.com/abuzar-mishwani)
+- LinkedIn: [Abu Zar Mishwani](https://www.linkedin.com/in/mishwani7/)t-18-blue)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-cyan)](https://tailwindcss.com/)
 [![Vite](https://img.shields.io/badge/Vite-5-purple)](https://vitejs.dev/)
@@ -186,7 +190,7 @@ No environment variables are required for this project as it's a static landing 
 
 - Website: [mishwani.tech](https://mishwani.tech)
 - GitHub: [@abuzar-mishwani](https://github.com/abuzar-mishwani)
-- LinkedIn: [Abuzar Mishwani](https://linkedin.com/in/abuzar-mishwani)
+- LinkedIn: [Abu Zar Mishwani](https://www.linkedin.com/in/mishwani7/)
 
 ## 📄 License
 
