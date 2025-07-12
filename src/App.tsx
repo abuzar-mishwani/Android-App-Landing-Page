@@ -29,19 +29,19 @@ import {
 } from 'lucide-react';
 
 // Import images
-import heroMockup from './assets/images/hero-mockup.png';
+import heroMockup from './assets/images/hero-mockup.webp';
 import googlePlayBadge from './assets/images/google-play-badge-logo.svg';
 import favicon from './assets/images/favicon.png';
-import screenshot1 from './assets/images/Screenshot-1.jpg';
-import screenshot2 from './assets/images/Screenshot-2.jpg';
-import screenshot3 from './assets/images/Screenshot-3.jpg';
-import screenshot4 from './assets/images/Screenshot-4.jpg';
-import screenshot5 from './assets/images/Screenshot-5.jpg';
-import screenshot6 from './assets/images/Screenshot-6.jpg';
-import screenshot7 from './assets/images/Screenshot-7.jpg';
-import screenshot8 from './assets/images/Screenshot-8.jpg';
-import screenshot9 from './assets/images/Screenshot-9.jpg';
-import screenshot10 from './assets/images/Screenshot-10.jpg';
+import screenshot1 from './assets/images/Screenshot-1.webp';
+import screenshot2 from './assets/images/Screenshot-2.webp';
+import screenshot3 from './assets/images/Screenshot-3.webp';
+import screenshot4 from './assets/images/Screenshot-4.webp';
+import screenshot5 from './assets/images/Screenshot-5.webp';
+import screenshot6 from './assets/images/Screenshot-6.webp';
+import screenshot7 from './assets/images/Screenshot-7.webp';
+import screenshot8 from './assets/images/Screenshot-8.webp';
+import screenshot9 from './assets/images/Screenshot-9.webp';
+import screenshot10 from './assets/images/Screenshot-10.webp';
 
 interface FeatureCardProps {
   icon: React.ReactNode;
