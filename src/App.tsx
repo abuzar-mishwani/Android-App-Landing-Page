@@ -270,7 +270,10 @@ function App() {
           </div>
           
           {/* Desktop Get Started Button */}
-          <motion.button
+          <motion.a
+            href="https://play.google.com/store/apps/details?id=advc.calc.easygpacalculator"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="btn-primary hidden sm:flex items-center gap-1.5 md:gap-2 text-sm md:text-base px-4 md:px-6 py-2 md:py-3"
@@ -281,7 +284,7 @@ function App() {
             <ArrowRight size={16} className="md:hidden" />
             <ArrowRight size={18} className="hidden md:block" />
             <span className="relative z-10">Get Started</span>
-          </motion.button>
+          </motion.a>
 
           {/* Mobile Menu Button */}
           <motion.button
