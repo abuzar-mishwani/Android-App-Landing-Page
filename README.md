@@ -1,11 +1,7 @@
 # 🎓 GPA Calculator & Planner - Modern Landing Page
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://mishwani.tech)
-[![React](https://img.shields.io/badge**Abu Zar Mishwani**
-
-- Website: [mishwani.tech](https://mishwani.tech)
-- GitHub: [@abuzar-mishwani](https://github.com/abuzar-mishwani)
-- LinkedIn: [Abu Zar Mishwani](https://www.linkedin.com/in/mishwani7/)t-18-blue)](https://reactjs.org/)
+[![React](https://img.shields.io/badge/React-18-blue)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-cyan)](https://tailwindcss.com/)
 [![Vite](https://img.shields.io/badge/Vite-5-purple)](https://vitejs.dev/)
@@ -134,9 +130,11 @@ src/
 
 ## 🎯 Performance Optimizations
 
-- Lazy loading for images and components
-- Optimized animations with Framer Motion
-- Efficient Tailwind CSS purging
+- **WebP Image Format** - All images converted to WebP for 25-35% size reduction
+- **Lazy Loading** - Images and components load when needed
+- **Optimized Animations** - Smooth 60fps animations with Framer Motion
+- **Efficient CSS** - Tailwind CSS purging removes unused styles
+- **Fast Build System** - Vite provides lightning-fast development and builds
 - Fast Vite build system
 
 ## 🚀 Deployment
@@ -186,7 +184,7 @@ No environment variables are required for this project as it's a static landing 
 
 ## 👨‍💻 Author
 
-**Abuzar Mishwani**
+**Abu Zar Mishwani**
 
 - Website: [mishwani.tech](https://mishwani.tech)
 - GitHub: [@abuzar-mishwani](https://github.com/abuzar-mishwani)
@@ -214,8 +212,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-<div align="center">
-  <strong>Built with ❤️ for students worldwide</strong>
-  <br>
-  <sub>© 2025 HindukushSoft Technologies</sub>
-</div>
+Built with ❤️ for students worldwide
+
+© 2025 HindukushSoft Technologies

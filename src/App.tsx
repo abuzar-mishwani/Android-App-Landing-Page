@@ -211,10 +211,10 @@ function App() {
       <div className="fixed inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50/30 to-gray-50" />
         
-        {/* Subtle floating geometric shapes */}
-        <div className="absolute top-20 left-10 w-32 h-32 bg-blue-200/40 rounded-full blur-2xl animate-pulse-glow" />
-        <div className="absolute top-1/3 right-20 w-48 h-48 bg-indigo-200/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
-        <div className="absolute bottom-1/4 left-1/3 w-40 h-40 bg-purple-200/40 rounded-full blur-2xl animate-bounce-slow" style={{ animationDelay: '4s' }} />
+        {/* Subtle floating geometric shapes - reduced on mobile */}
+        <div className="absolute top-20 left-10 w-32 h-32 bg-blue-200/40 rounded-full blur-2xl animate-pulse-glow hidden sm:block" />
+        <div className="absolute top-1/3 right-20 w-48 h-48 bg-indigo-200/30 rounded-full blur-3xl animate-float hidden md:block" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-1/4 left-1/3 w-40 h-40 bg-purple-200/40 rounded-full blur-2xl animate-bounce-slow hidden sm:block" style={{ animationDelay: '4s' }} />
       </div>
 
       {/* Full Page Blur Overlay when mobile menu is open */}
@@ -514,35 +514,47 @@ function App() {
             >
               <motion.div
                 className="relative"
-                animate={{ 
+                animate={typeof window !== 'undefined' && window.innerWidth >= 768 ? { 
                   rotateY: [0, 5, 0, -5, 0],
                   rotateX: [0, 2, 0, -2, 0]
+                } : {
+                  // Simpler animation for mobile
+                  y: [0, -5, 0]
                 }}
-                transition={{ 
+                transition={typeof window !== 'undefined' && window.innerWidth >= 768 ? { 
                   duration: 10,
                   repeat: Infinity,
                   ease: "easeInOut"
+                } : {
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                style={{ 
+                  // Disable 3D animations on mobile for better performance
+                  transformStyle: typeof window !== 'undefined' && window.innerWidth < 768 ? 'flat' : 'preserve-3d'
                 }}
               >
                 <img 
                   src={heroMockup} 
                   alt="GPA Calculator App"
                   className="w-72 h-auto object-contain floating-element relative z-10 mt-8"
+                  loading="eager"
                 />
                 
-                {/* Enhanced glow effects */}
-                <div className="absolute -inset-8 bg-gradient-to-r from-blue-500/30 via-purple-500/30 to-pink-500/30 rounded-full blur-3xl animate-pulse-glow" />
-                <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400/20 to-blue-600/20 rounded-full blur-2xl animate-spin-slow" />
+                {/* Enhanced glow effects - simplified on mobile */}
+                <div className="absolute -inset-8 bg-gradient-to-r from-blue-500/30 via-purple-500/30 to-pink-500/30 rounded-full blur-3xl animate-pulse-glow hidden sm:block" />
+                <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400/20 to-blue-600/20 rounded-full blur-2xl animate-spin-slow hidden sm:block" />
                 
-                {/* Floating elements */}
+                {/* Floating elements - simplified on mobile */}
                 <motion.div 
-                  className="absolute top-10 -right-10 w-20 h-20 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-xl backdrop-blur-lg border border-white/10"
+                  className="absolute top-10 -right-10 w-20 h-20 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-xl backdrop-blur-lg border border-white/10 hidden md:block"
                   animate={{ y: [-10, 10, -10], rotate: [0, 180, 360] }}
                   transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                 />
                 
                 <motion.div 
-                  className="absolute bottom-20 -left-10 w-16 h-16 bg-gradient-to-r from-pink-400/20 to-purple-600/20 rounded-full backdrop-blur-lg border border-white/10"
+                  className="absolute bottom-20 -left-10 w-16 h-16 bg-gradient-to-r from-pink-400/20 to-purple-600/20 rounded-full backdrop-blur-lg border border-white/10 hidden md:block"
                   animate={{ y: [10, -10, 10], x: [-5, 5, -5] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 />
@@ -681,6 +693,8 @@ function App() {
                         src={screenshot.src}
                         alt={screenshot.alt}
                         className="w-full h-auto"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </div>
                   </div>
