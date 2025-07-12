@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, memo, useMemo, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import logoDark from './assets/images/logo-dark.svg';
+import { PerformanceMonitor } from './utils/performance';
 import { 
   Calculator, 
   Target, 
@@ -50,7 +51,7 @@ interface FeatureCardProps {
   delay: number;
 }
 
-const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, delay }) => (
+const FeatureCard: React.FC<FeatureCardProps> = memo(({ icon, title, description, delay }) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -82,13 +83,20 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, del
       {description}
     </p>
   </motion.div>
-);
+));
 
 function App() {
   const [expandedReview, setExpandedReview] = useState<number | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const promoFeatures = [
+  // Initialize performance monitoring
+  useEffect(() => {
+    const monitor = PerformanceMonitor.getInstance();
+    monitor.measurePageLoad();
+    monitor.monitorResources();
+  }, []);
+
+  const promoFeatures = useMemo(() => [
     {
       icon: <Zap size={40} />,
       title: "All-in-One GPA Suite",
@@ -104,9 +112,9 @@ function App() {
       title: "Private & Ad-Free",
       description: "Enjoy a secure, offline experience with no ads—your data stays private and your focus remains on your goals."
     }
-  ];
+  ], []);
 
-  const features = [
+  const features = useMemo(() => [
     {
       icon: <Calculator size={32} />,
       title: "Semester GPA Calculator",
@@ -152,9 +160,9 @@ function App() {
       title: "Offline & Ad‑Free",
       description: "Fully functional offline—no internet required. No ads, ensuring a smooth and focused user experience."
     }
-  ];
+  ], []);
 
-  const testimonials = [
+  const testimonials = useMemo(() => [
     {
       name: "Azib Waqas",
       content: "I'm thoroughly impressed with the GPA Calculator & Planner app! It's incredibly user-friendly and flexible, making it a breeze to calculate my GPA and CGPA. The customizable templates and grading scales are a huge plus, and the GPA planning tool has been a game-changer for setting targets and tracking progress. The app is super easy to navigate, and I've found it to be extremely accurate. Highly recommend it to anyone looking for a reliable and feature-rich GPA calculator!",
@@ -190,9 +198,9 @@ function App() {
       content: "I've been using the GPA Calculator app for a semester now, and it's been a total game-changer for tracking my academic progress! This app is incredibly user-friendly, allowing me to easily calculate my GPA, CGPA, and even plan out my future grades with its built-in GPA planner. Highly Recommended for all university students! 😍👍",
       rating: 5
     }
-  ];
+  ], []);
 
-  const screenshots = [
+  const screenshots = useMemo(() => [
     { src: screenshot1, alt: "GPA Calculator Interface", title: "Grade Tracker" },
     { src: screenshot2, alt: "CGPA Tracking", title: "GPA Calculator" },
     { src: screenshot3, alt: "Grade Planning", title: "Course Planner" },
@@ -203,7 +211,7 @@ function App() {
     { src: screenshot8, alt: "Settings Panel", title: "Settings & Preferences" },
     { src: screenshot9, alt: "Advanced Features", title: "Advanced Tools" },
     { src: screenshot10, alt: "User Dashboard", title: "Student Dashboard" }
-  ];
+  ], []);
 
   return (
     <div className="min-h-screen overflow-hidden custom-scrollbar">
@@ -540,6 +548,9 @@ function App() {
                   alt="GPA Calculator App"
                   className="w-72 h-auto object-contain floating-element relative z-10 mt-8"
                   loading="eager"
+                  decoding="async"
+                  width="288"
+                  height="auto"
                 />
                 
                 {/* Enhanced glow effects - simplified on mobile */}

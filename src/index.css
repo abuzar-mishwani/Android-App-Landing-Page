@@ -1,8 +1,8 @@
-/* Swiper Styles - must be imported first */
-@import "swiper/css";
-@import "swiper/css/navigation";
-@import "swiper/css/pagination";
+/* Import Swiper CSS first, before Tailwind */
+@import "swiper/css/bundle";
 
+/* Critical CSS for performance */
+/* Preload critical fonts with font-display: swap for better performance */
 @font-face {
   font-family: "Aeonik";
   src: url("./assets/aeonik_regular.otf") format("opentype");
@@ -24,11 +24,29 @@
 @tailwind utilities;
 
 @layer base {
+  /* Optimize base styles for performance */
+  html {
+    @apply scroll-smooth;
+  }
+
   body {
     @apply bg-gray-100 text-gray-900 antialiased;
-    font-family: "Aeonik", system-ui, sans-serif;
+    font-family: "Aeonik", system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Roboto, sans-serif;
     font-weight: 400;
     margin: 0;
+    /* Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Optimize images for performance */
+  img {
+    @apply max-w-full h-auto;
+    /* Enable hardware acceleration for images */
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
 }
 

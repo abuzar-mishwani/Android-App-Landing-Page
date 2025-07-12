@@ -1,0 +1,55 @@
+{
+  "name": "GPA Calculator & Planner",
+  "short_name": "GPA Calculator",
+  "description": "The most advanced GPA Calculator & Planner app for students. Calculate GPA, CGPA, plan semesters, and track academic progress.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3B82F6",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["education", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/src/assets/images/Screenshot-1.webp",
+      "sizes": "390x844",
+      "type": "image/webp",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/src/assets/images/Screenshot-2.webp",
+      "sizes": "390x844",
+      "type": "image/webp",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Calculate GPA",
+      "short_name": "GPA Calc",
+      "description": "Quickly calculate your semester GPA",
+      "url": "/#features",
+      "icons": [
+        {
+          "src": "/favicon.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+}
