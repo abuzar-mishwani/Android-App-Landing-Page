@@ -997,7 +997,7 @@ function App() {
         transition={{ duration: 0.6, delay: 0.4 }}
         viewport={{ once: true }}
       >
-        © 2025 HindukushSoft Technologies. Made with ❤️ for students worldwide.
+        © 2025 HindukushSoft Technologies. Made with ❤️ for 🌍 by Abu Zar Mishwani
       </motion.div>
     </motion.div>
   </div>
